@@ -183,8 +183,8 @@
 {% endif %}
 {% if hasColor %}
 
-{{accessModifier}} final class {{colorType}} {
-  {{accessModifier}} fileprivate(set) var name: String
+{{accessModifier}} final class {{colorType}}: Sendable {
+  {{accessModifier}} nonisolated(unsafe) fileprivate(set) var name: String
 
   #if os(macOS)
   {{accessModifier}} typealias Color = NSColor
